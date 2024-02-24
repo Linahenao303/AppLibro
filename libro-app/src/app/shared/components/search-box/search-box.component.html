@@ -1,0 +1,12 @@
+<bc-form-field>
+  <em>search</em>
+  <input bc-input type="text"
+         [placeholder]="placeholder"
+         [(ngModel)]="searchTerm"
+         (keyup.enter)="emitValue(searchTerm)"
+         list="searchList"/>
+  <datalist id="searchList">
+    <option *ngFor="let word of inputCache" [value]="word"></option>
+  </datalist>
+</bc-form-field>
+<button class="bc-p-2" bc-button sizeButton="small" (click)="emitValue(searchTerm)">Buscar</button>

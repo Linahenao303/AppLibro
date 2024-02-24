@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Buscar libros</h2>
+    <section class="bc-row bc-p-3 bc-mt-3">
+      <section class="bc-col-xl-6 ">
+        <app-search-box
+          (onValue)="searchBook($event)"
+          placeholder="Buscar libro"></app-search-box>
+      </section>
+    </section>
+  <div class="bc-mt-5">
+    <app-book-table [book]="books" [timeShowAlert]="ShowAlert"></app-book-table>
+  </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,36 @@
+<div class="container">
+  <h2> Libros nuevos</h2>
+  <div class="bc-row">
+    <div class="bc-mt-5 bc-m-2">
+      <bc-search  [items]="books" (objFilter)="onChangesData($event)" (clearEvent)="eventEmitter()">
+        <bc-search-content-items>
+          <bc-search-left>
+            <section>
+              <bc-form-field>
+                <em>book</em>
+                <input bc-input id="title" autocomplete="off"  type="text" name="title" value=""  required/>
+                <label for="title">Buscar por titulo</label>
+              </bc-form-field>
+            </section>
+          </bc-search-left>
+          <bc-search-button iconSearch="search"></bc-search-button>
+          <bc-search-advanced>
+            <bc-search-item-advanced>
+              <bc-form-field><input bc-input autocomplete="off"  type="text" id="subtitle"
+                                    name="subtitle"
+                                    value="" required/><label for="subtitle">Subtitulo</label></bc-form-field>
+            </bc-search-item-advanced>
+          </bc-search-advanced>
+        </bc-search-content-items>
+        <bc-search-result-filter [imageResultNull]="'/assets/icons/pictograms/search2.svg'"
+                                 [itemsli]="arrResultNull"
+                                 [labelResultNull]="'Texto enviado desde el componente'">
+
+        </bc-search-result-filter>
+      </bc-search>
+    </div>
+  </div>
+  <div>
+    <app-book-table [book]="books" [timeShowAlert] = "false"></app-book-table>
+  </div>
+</div>

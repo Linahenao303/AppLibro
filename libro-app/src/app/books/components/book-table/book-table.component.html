@@ -1,0 +1,45 @@
+<bc-table-container class="bc-m-2 " *ngIf="book! && book.length > 0 " [dataTable]="book">
+  <bc-table-header title="Resultado de busqueda"></bc-table-header>
+  <bc-table-content>
+    <table caption="tabla" bc-table>
+      <table bc-table>
+        <thead>
+        <tr>
+          <th>#</th>
+          <th></th>
+          <th>isbn</th>
+          <th>Titulo</th>
+          <th>subtitulo</th>
+          <th>Precio</th>
+          <th>url</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of book; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <a [routerLink]="['/books/id',row.isbn13]">Info</a>
+          </td>
+          <td bc-cell>{{ row.isbn13 }}</td>
+          <td bc-cell>{{ row.title }}</td>
+          <td bc-cell>{{ row.subtitle }}</td>
+          <td bc-cell>{{ row.price }}</td>
+          <td>
+            <a [href]="row.url" target="_blank">{{ row.url }}</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </table>
+  </bc-table-content>
+</bc-table-container>
+
+
+<div *ngIf="timeShowAlert && book.length == 0">
+  <bc-alert
+    text="No hay libros asociados para tu busqueda"
+    [type]="'info'"
+    [inline]="true"
+    [dismissible]="true"
+  ></bc-alert>
+</div>

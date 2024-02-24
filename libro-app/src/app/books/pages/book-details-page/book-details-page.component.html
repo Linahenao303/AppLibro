@@ -1,0 +1,48 @@
+<div *ngIf="bookDetails">
+<div class="container">
+  <div class="bc-row">
+    <div class="bc-col-12">
+      <h2>Titulo: {{ bookDetails.title}}</h2>
+    </div>
+  </div>
+</div>
+
+  <div class="container bc-row">
+    <div class="">
+      <img class="book-image" [src]="bookDetails.image" [alt]="bookDetails.isbn13">
+    </div>
+    <div class="bc-col">
+      <div>
+        <bc-accordions-group class="bc-col-xl-12">
+          <bc-accordion type="column">
+            <bc-accordion-header [title]="'Detalles del libro'"></bc-accordion-header>
+            <bc-accordion-content>
+              <div class="book-details bc-m-4">
+                <h6>Subtitulo</h6>
+                <p>{{ bookDetails.subtitle }}</p>
+                <h6>Autor</h6>
+                <p>{{ bookDetails.authors }}</p>
+                <h6>Editor</h6>
+                <p>{{ bookDetails.publisher }}</p>
+                <h6>Idioma</h6>
+                <p>{{ bookDetails.language }}</p>
+                <h6>Páginas</h6>
+                <p>{{ bookDetails.pages }}</p>
+                <h6>Año</h6>
+                <p>{{ bookDetails.year }}</p>
+                <h6>Calificación</h6>
+                <p>{{ bookDetails.rating }}</p>
+                <h6>Descripción</h6>
+                <p>{{ bookDetails.desc }}</p>
+                <h6>Precio</h6>
+                <p>{{ bookDetails.price }}</p>
+                <h6>URL</h6>
+                <a class="book-url" [href]="bookDetails.url" target="_blank">{{ bookDetails.url }}</a>
+              </div>
+            </bc-accordion-content>
+          </bc-accordion>
+        </bc-accordions-group>
+      </div>
+    </div>
+  </div>
+</div>

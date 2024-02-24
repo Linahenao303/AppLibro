@@ -1,0 +1,16 @@
+<bc-header [menuInteraction]=true [fixed]="true" [routerLink]="[ 'home']">
+  <bc-header-left logoName="bancolombia-horizontal"></bc-header-left>
+</bc-header>
+
+<bc-menu class="menu-app-showcase" [state]="'close'">
+  <bc-menu-drawer>
+    <bc-menu-item identifierContent='id3' text='Buscar libros' iconName='book'
+                  routerLink="/books/search"></bc-menu-item>
+    <bc-menu-item identifierContent='id2' text='Libros nuevos' iconName='news' routerLink="/books/new"></bc-menu-item>
+  </bc-menu-drawer>
+  <bc-menu-main>
+  </bc-menu-main>
+  <div class="bc-content-body">
+    <router-outlet></router-outlet>
+  </div>
+</bc-menu>
